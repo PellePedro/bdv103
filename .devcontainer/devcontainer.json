@@ -9,6 +9,7 @@
 		"ghcr.io/devcontainers-contrib/features/tsx:1": {},
 		"ghcr.io/mcmastercce/bvd-103-mcmasterful-books/mcmasterful-books:latest": {}
 	},
+	"workspaceFolder": "/workspaces",
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
@@ -22,6 +23,7 @@
 	"customizations": {
 		"vscode": {
 			"extensions": [
+				"mongodb.mongodb-vscode",
 				"humao.rest-client",
 				"rangav.vscode-thunder-client"
 			],

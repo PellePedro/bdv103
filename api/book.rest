@@ -3,3 +3,34 @@ GET http://localhost:3000/books
 
 ###
 GET http://localhost:3000/books?filters[0][from]=20&filters[0][to]=40
+
+###
+POST http://localhost:3000/books
+Content-Type: application/json
+
+{
+    "name": "The Great Gatsby",
+    "author": "F. Scott Fitzgerald",
+    "description": "A novel about the decadence and excess of the 1920s.",
+    "price": 15.99,
+    "image": "https://example.com/great-gatsby.jpg"
+}
+
+###
+# @name createBook
+POST http://localhost:3000/books
+Content-Type: application/json
+
+{
+    "name": "The Great Gatsby",
+    "author": "F. Scott Fitzgerald",
+    "description": "A novel about the decadence and excess of the 1920s.",
+    "price": 15.99,
+    "image": "https://example.com/great-gatsby.jpg"
+}
+
+###
+@bookId = {{createBook.response.body.id}}
+
+###
+DELETE http://localhost:3000/books/66f5efbdb17c9b0bb1729a71

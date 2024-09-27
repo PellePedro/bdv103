@@ -9,7 +9,7 @@
 		"ghcr.io/devcontainers-contrib/features/tsx:1": {},
 		"ghcr.io/mcmastercce/bvd-103-mcmasterful-books/mcmasterful-books:latest": {}
 	},
-	"workspaceFolder": "/workspaces",
+	//"workspaceFolder": "/workspaces",
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},

@@ -1,5 +1,6 @@
 import Router from 'koa-router';
 import adapter from '../adapter';
+import { Book } from '../adapter/assignment-2';
 const router = new Router();
 
 router.get('/books', async (ctx) => {
@@ -11,6 +12,26 @@ router.get('/books', async (ctx) => {
     } catch (error) {
         ctx.status = 500;
         ctx.body = { error: `Failed to fetch books due to: ${error}` };
+    }
+});
+router.post('/books', async (ctx) => {
+    const book = ctx.request.body as Book;
+    try {
+        const bookId = await adapter.createOrUpdateBook(book);
+        ctx.body = { id: bookId };
+    } catch (error) {
+        ctx.status = 500;
+        ctx.body = { error: `Failed to create or update book due to: ${error}` };
+    }
+});
+router.delete('/books/:id', async (ctx) => {
+    const bookId = ctx.params.id;
+    try {
+        await adapter.removeBook(bookId);
+        ctx.status = 204;
+    } catch (error) {
+        ctx.status = 500;
+        ctx.body = { error: `Failed to delete book due to: ${error}` };
     }
 });
 
